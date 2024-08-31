@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e68c12d-c51b-4291-9c86-30f67787e65b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spawn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spawn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/MaterialsAndShaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Entity.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Entity.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/UnityConfigs.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/UnityConfigs.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Resources/Prefabs/Entity.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Resources/Prefabs/Entity.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SpawnScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SpawnScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +20,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/IHorizontalCameraMovementBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/ITownCameraEventsHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/ITownCameraEventsProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/ICameraEventsHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/ICameraEventsProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/ab/cb52324f/Plane.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.50152904" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.38268793" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -63,10 +60,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18864">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="18864" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -86,7 +83,9 @@
       <workItem from="1721235278122" duration="1436000" />
       <workItem from="1724844515912" duration="324000" />
       <workItem from="1724844867889" duration="6577000" />
-      <workItem from="1724926276236" duration="2059000" />
+      <workItem from="1724926276236" duration="6651000" />
+      <workItem from="1724942810617" duration="17443000" />
+      <workItem from="1725102663482" duration="1105000" />
     </task>
     <servers />
   </component>
@@ -114,173 +113,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/HorizontalCameraMovementStrategy.cs</url>
-          <line>32</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\HorizontalCameraMovementStrategy.cs" initialLine="32" containingFunctionPresentation="method 'ProcessStartDrag'">
+          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/MoveByDragBehaviour.cs</url>
+          <line>54</line>
+          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\MoveByDragBehaviour.cs" initialLine="54" containingFunctionPresentation="method 'ProcessDrag'">
             <startOffsets>
-              <option value="1039" />
+              <option value="2362" />
             </startOffsets>
             <endOffsets>
-              <option value="1079" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/HorizontalCameraMovementStrategy.cs</url>
-          <line>28</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\HorizontalCameraMovementStrategy.cs" initialLine="28" containingFunctionPresentation="method 'ProcessStartDrag'">
-            <startOffsets>
-              <option value="986" />
-            </startOffsets>
-            <endOffsets>
-              <option value="987" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/HorizontalCameraMovementStrategy.cs</url>
-          <line>27</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\HorizontalCameraMovementStrategy.cs" initialLine="27" containingFunctionPresentation="method 'ProcessStartDrag'">
-            <startOffsets>
-              <option value="958" />
-            </startOffsets>
-            <endOffsets>
-              <option value="973" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/HorizontalCameraMovementStrategy.cs</url>
-          <line>38</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\HorizontalCameraMovementStrategy.cs" initialLine="38" containingFunctionPresentation="method 'ProcessDrag'">
-            <startOffsets>
-              <option value="1236" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1251" />
+              <option value="2440" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/HorizontalCameraMovementStrategy.cs</url>
-          <line>48</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\HorizontalCameraMovementStrategy.cs" initialLine="48" containingFunctionPresentation="method 'ProcessEndDrag'">
-            <startOffsets>
-              <option value="1437" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1452" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/MoveByDragBehaviour.cs</url>
-          <line>37</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\MoveByDragBehaviour.cs" initialLine="37" containingFunctionPresentation="method 'ProcessStartDrag'">
-            <startOffsets>
-              <option value="1576" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1577" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/MoveByDragBehaviour.cs</url>
-          <line>122</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\MoveByDragBehaviour.cs" initialLine="122" containingFunctionPresentation="method 'TryMoveCameraToTargetPosition'">
-            <startOffsets>
-              <option value="4622" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4841" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/CameraView.cs</url>
-          <line>64</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\CameraView.cs" initialLine="63" containingFunctionPresentation="method 'OnPointerClick'">
-            <startOffsets>
-              <option value="2032" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2033" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/CameraView.cs</url>
-          <line>50</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\CameraView.cs" initialLine="49" containingFunctionPresentation="method 'OnBeginDrag'">
-            <startOffsets>
-              <option value="1628" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1683" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/CameraView.cs</url>
-          <line>55</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\CameraView.cs" initialLine="54" containingFunctionPresentation="method 'OnDrag'">
-            <startOffsets>
-              <option value="1772" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1822" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/CameraView.cs</url>
-          <line>60</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\CameraView.cs" initialLine="59" containingFunctionPresentation="method 'OnEndDrag'">
-            <startOffsets>
-              <option value="1914" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1949" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/CameraView.cs</url>
-          <line>82</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\CameraView.cs" initialLine="81" containingFunctionPresentation="method 'OnPointerDown'">
-            <startOffsets>
-              <option value="2556" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2557" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/Camera/CameraView.cs</url>
-          <line>87</line>
-          <properties documentPath="E:\SpawnWithOptimization\Spawn\Assets\Game\Scripts\SpawnBetterPerformance\Scripts\Camera\CameraView.cs" initialLine="86" containingFunctionPresentation="method 'OnPointerUp'">
-            <startOffsets>
-              <option value="2648" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2649" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
