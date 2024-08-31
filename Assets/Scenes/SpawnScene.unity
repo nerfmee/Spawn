@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _raycaster: {fileID: 519420033}
   _objectsData:
-    TownPlane: {fileID: 472866093}
+    _plane: {fileID: 472866093}
     _camera: {fileID: 519420031}
     _cameraHolder: {fileID: 586705509}
     _xRotator: {fileID: 586705509}

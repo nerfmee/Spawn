@@ -30,7 +30,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
             _camera = objectsData.Camera;
             _cameraHolder = objectsData.CameraHolder;
             _xRotator = objectsData.XRotator;
-            _townPlane = new Plane(objectsData._townPlane.up, objectsData._townPlane.position);
+            _townPlane = new Plane(objectsData._plane.up, objectsData._plane.position);
             _coroutineObject = gameObject;
         }
 

@@ -7,7 +7,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
     public struct CameraObjectsData
     {
         [SerializeField]
-        public Transform _townPlane;
+        public Transform _plane;
         
         [SerializeField]
         private UnityEngine.Camera _camera;
