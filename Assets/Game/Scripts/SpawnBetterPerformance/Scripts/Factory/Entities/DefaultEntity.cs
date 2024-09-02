@@ -1,7 +1,6 @@
-using Project.Game.Scripts.SpawnBetterPerformance.Factory.Stairs;
 using UnityEngine;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Stairs
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Entities
 {
     public class DefaultEntity : MonoBehaviour, IEntity
     {

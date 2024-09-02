@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance.Factory.Stairs
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Entities
 {
     public interface IEntity
     {

@@ -1,4 +1,4 @@
-namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.Services
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.Services
 {
     public interface IService
     {

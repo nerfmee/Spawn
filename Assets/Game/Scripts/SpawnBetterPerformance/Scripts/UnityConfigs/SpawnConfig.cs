@@ -1,9 +1,8 @@
-using Project.Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Stairs;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Entities;
 using UnityEngine;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.UnityConfigs
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.UnityConfigs
 {
-    
     [CreateAssetMenu(fileName = "SpawnConfig", menuName = "Custom/Spawn Config")]
     public sealed class SpawnConfig : ScriptableObject
     {

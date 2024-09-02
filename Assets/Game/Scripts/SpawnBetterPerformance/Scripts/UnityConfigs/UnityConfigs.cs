@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.UnityConfigs
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.UnityConfigs
 {
     public class UnityConfigs: MonoBehaviour
     {

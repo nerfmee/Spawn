@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.Services
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.Services
 {
     public class Scope<T>: IScope<T>
     {
@@ -43,7 +43,6 @@ namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.Services
             if (!_itemsMap.ContainsKey(type))
             {
                 throw new Exception($"There is no object of type  {type} in the service locator");
-                
             }
 
             return (TP) _itemsMap[type];

@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance
+namespace Game.Scripts.SpawnBetterPerformance.Scripts
 {
     public class CustomPool <T> where T: MonoBehaviour
     {

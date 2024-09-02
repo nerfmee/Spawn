@@ -17,7 +17,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
         private Vector3 _objectStartPosition;
         private Vector3? _targetLocalPosition;
         
-        private Plane _townPlane;
+        private Plane _plane;
         private readonly MapLimitsForCameraData _mapLimitsForCameraData;
         private Vector3 _worldMapPoint;
         private readonly MonoBehaviour _coroutineObject;
@@ -30,13 +30,13 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
             _camera = objectsData.Camera;
             _cameraHolder = objectsData.CameraHolder;
             _xRotator = objectsData.XRotator;
-            _townPlane = new Plane(objectsData._plane.up, objectsData._plane.position);
+            _plane = new Plane(objectsData._plane.up, objectsData._plane.position);
             _coroutineObject = gameObject;
         }
 
         public void ProcessStartDrag(Vector2 screenPosition)
         {
-            _startDragPosition = ConvertFromScreenToTownPlaneInCameraHolderSpace(screenPosition);
+            _startDragPosition = ConvertFromScreenToPlaneInCameraHolderSpace(screenPosition);
             _objectStartPosition = _cameraHolder.localPosition;
             _targetLocalPosition = _objectStartPosition;
             
@@ -48,7 +48,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
 
         public void ProcessDrag(Vector2 screenPosition)
         {
-            Vector3 newPos = ConvertFromScreenToTownPlaneInCameraHolderSpace(screenPosition);
+            Vector3 newPos = ConvertFromScreenToPlaneInCameraHolderSpace(screenPosition);
             Vector3 delta = newPos - _startDragPosition;
             //Speed up z-axis movement to make it visually look equal to x-axis movement
             delta.y *= 1f / Mathf.Sin(_xRotator.localEulerAngles.x * Mathf.Deg2Rad);
@@ -86,18 +86,18 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
             }
         }
         
-        private Vector3 ConvertFromScreenToTownPlaneInCameraHolderSpace(Vector2 screenPosition)
+        private Vector3 ConvertFromScreenToPlaneInCameraHolderSpace(Vector2 screenPosition)
         {
             var ray = _camera.ScreenPointToRay(screenPosition);
-            Vector3 worldPoint = RayIntersectionWithTownPlane(ray);
+            Vector3 worldPoint = RayIntersectionWithPlane(ray);
             return _cameraHolder.InverseTransformPoint(worldPoint);
         }
 
-        private Vector3 RayIntersectionWithTownPlane(Ray ray)
+        private Vector3 RayIntersectionWithPlane(Ray ray)
         {
-            if (!_townPlane.Raycast(ray, out var enterDistance))
+            if (!_plane.Raycast(ray, out var enterDistance))
             {
-                Debug.LogError("Invalid camera position - no intersection with town plane");
+                Debug.LogError("Invalid camera position - no intersection with plane");
                 return Vector2.zero;
             }
 

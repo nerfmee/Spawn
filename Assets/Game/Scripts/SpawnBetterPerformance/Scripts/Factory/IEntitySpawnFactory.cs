@@ -1,7 +1,7 @@
-using Project.Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Stairs;
-using Project.Game.Scripts.SpawnBetterPerformance.Scripts.Services;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Entities;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Services;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.Factory
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory
 {
     public interface IEntitySpawnFactory : IService
     {

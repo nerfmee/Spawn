@@ -16,9 +16,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
             MapLimitsForCameraData mapLimitsForCameraData,
             MonoBehaviour gameObject)
         {
-            _moveByDragBehaviour =
-                new MoveByDragBehaviour(objectsData, dragCameraMovementData, mapLimitsForCameraData, gameObject);
-
+            _moveByDragBehaviour = new MoveByDragBehaviour(objectsData, dragCameraMovementData, mapLimitsForCameraData, gameObject);
             _currentBehaviour = _moveByDragBehaviour;
             _isEnable = true;
         }

@@ -1,27 +1,21 @@
-using Project.Game.Scripts.SpawnBetterPerformance.Factory;
-using Project.Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Stairs;
-using Project.Game.Scripts.SpawnBetterPerformance.Scripts.Services;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Entities;
 using UnityEngine;
 
-namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.Factory
+namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory
 {
     public class EntitySpawnFactory : IEntitySpawnFactory
     {
-        private readonly CustomPool<DefaultEntity> _defaultStairsPool;
-  
-        private readonly IAssetProvider _assetProvider;
+        private readonly CustomPool<DefaultEntity> _defaultEntityPool;
         private Vector2 _spawnPosition;
 
-        public EntitySpawnFactory(CustomPool<DefaultEntity> defaultStairsPool, IAssetProvider assetProvider)
+        public EntitySpawnFactory(CustomPool<DefaultEntity> defaultEntityPool)
         {
-            _defaultStairsPool = defaultStairsPool;
-         
-            _assetProvider = assetProvider;
+            _defaultEntityPool = defaultEntityPool;
         }
 
         public DefaultEntity SpawnDefaultEntity()
         {
-            DefaultEntity defaultEntity = _defaultStairsPool.Get();
+            DefaultEntity defaultEntity = _defaultEntityPool.Get();
             SpawnInChessOrder(defaultEntity);
             defaultEntity.transform.position = _spawnPosition;
             return defaultEntity;
@@ -55,11 +49,5 @@ namespace Project.Game.Scripts.SpawnBetterPerformance.Scripts.Factory
                 SpawnDefaultEntity();
             }
         }
-        
-        public void SpawnCustomStair()
-        {
-            throw new System.NotImplementedException();
-        }
-
     }
 }
