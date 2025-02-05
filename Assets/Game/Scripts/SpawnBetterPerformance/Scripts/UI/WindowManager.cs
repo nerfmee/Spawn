@@ -8,20 +8,20 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
 {
     public class WindowManager : IService
     {
-        private readonly Transform _uiRoot;
-        private readonly Dictionary<Type, GameObject> _registeredWindows = new();
-        private readonly Dictionary<Type, WindowController> _openWindows = new();
+        private readonly Dictionary<Type, UIElement> _registeredWindows = new();
+        private readonly Dictionary<Type, UIElement> _openWindows = new();
+        private readonly UIRoot _uiRoot;
 
-        public WindowManager(Transform uiRoot)
+        public WindowManager(UIRoot uiRoot)
         {
-            _uiRoot = uiRoot;
+            _uiRoot = uiRoot ?? throw new ArgumentNullException(nameof(uiRoot));
         }
 
-        public void RegisterWindow(Type windowType, GameObject prefab)
+        public void RegisterWindow(Type windowType, UIElement uiElement)
         {
             if (!_registeredWindows.ContainsKey(windowType))
             {
-                _registeredWindows[windowType] = prefab;
+                _registeredWindows[windowType] = uiElement;
             }
             else
             {
@@ -29,7 +29,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
             }
         }
 
-        public T OpenWindow<T>(object data = null, Action onOpen = null) where T : WindowController
+        public T OpenWindow<T>(object data = null, Action onOpen = null) where T : UIElement
         {
             Type windowType = typeof(T);
 
@@ -38,14 +38,14 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
                 Debug.LogWarning($"Window {windowType.Name} is already open.");
                 return null;
             }
-
+            
             if (!_registeredWindows.TryGetValue(windowType, out var prefab))
             {
                 Debug.LogError($"No prefab registered for window {windowType.Name}. Make sure it's registered.");
                 return null;
             }
 
-            var windowObject = Object.Instantiate(prefab, _uiRoot);
+            var windowObject = Object.Instantiate(prefab, _uiRoot.GetLayer(prefab.Layer));
             var controller = windowObject.GetComponent<T>();
 
             if (controller == null)
@@ -66,7 +66,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
             return controller;
         }
 
-        public void CloseWindow<T>(Action onClose = null) where T : WindowController
+        public void CloseWindow<T>(Action onClose = null) where T : UIElement
         {
             Type windowType = typeof(T);
 
@@ -84,7 +84,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
             });
         }
 
-        public bool IsWindowOpen<T>() where T : WindowController
+        public bool IsWindowOpen<T>() where T : UIElement
         {
             return _openWindows.ContainsKey(typeof(T));
         }

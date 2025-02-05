@@ -19,7 +19,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
             _registeredWindows.Clear();
             foreach (var prefab in windowPrefabs)
             {
-                if (prefab.TryGetComponent<WindowController>(out var controller))
+                if (prefab.TryGetComponent<UIElement>(out var controller))
                 {
                     _registeredWindows[controller.GetType()] = prefab;
                 }
@@ -39,15 +39,17 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
         {
             foreach (var prefab in windowPrefabs)
             {
-                if (prefab.TryGetComponent<WindowController>(out var controller))
+                if (prefab.TryGetComponent<UIElement>(out var uiElement))
                 {
-                    manager.RegisterWindow(controller.GetType(), prefab);
+                    var type = uiElement.GetType();
+                    manager.RegisterWindow(type, uiElement);
                 }
                 else
                 {
-                    Debug.LogWarning($"Prefab {prefab.name} does not contain a WindowController component.");
+                    Debug.LogWarning($"Prefab {prefab.name} does not contain a UIElement component.");
                 }
             }
         }
+        
     }
 }

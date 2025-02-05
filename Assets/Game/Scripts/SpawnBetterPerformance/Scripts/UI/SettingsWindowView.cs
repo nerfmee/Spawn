@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
 {
-    public class SettingsWindowController : WindowController
+    public class SettingsWindowView : UIElement
     {
         [SerializeField] private Button settingsButton;
         [SerializeField] private WindowEffect windowEffect;
@@ -40,7 +40,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
         private void CloseWindow()
         {
             _windowManager = AllServices.Container.Single<WindowManager>();
-            _windowManager.CloseWindow<SettingsWindowController>();
+            _windowManager.CloseWindow<SettingsWindowView>();
             
         }
         

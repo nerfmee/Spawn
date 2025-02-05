@@ -11,7 +11,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts
         private const int POOL_COUNT = 1000;
         private const int SPAWN_COUNT = 500;
         [SerializeField] private WindowRegistry windowRegistry;
-        [SerializeField] private Transform uiRoot;
+        [SerializeField] private UIRoot uiRoot;
         private void Start()
         {
             var assetProvider = new AssetProvider();

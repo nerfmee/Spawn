@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
 {
-    public class GameView : WindowController
+    public class GameView : UIElement
     {
         [SerializeField] private Button settingsButton;
         private WindowManager _windowManager;
@@ -18,7 +18,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
         }
         private void OpenSettingsWindow()
         {
-            _windowManager.OpenWindow<SettingsWindowController>();
+            _windowManager.OpenWindow<SettingsWindowView>();
         }
     }
 }

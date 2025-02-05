@@ -2,8 +2,11 @@ using UnityEngine;
 
 namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
 {
-    public abstract class WindowController : MonoBehaviour
+    public abstract class UIElement : MonoBehaviour
     {
+        [SerializeField] private UILayer _layer; 
+        public UILayer Layer => _layer; 
+        
         public virtual void Initialize(object data)
         {
             Debug.Log($"Window initialized with data: {data}");
@@ -21,7 +24,12 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
             onComplete?.Invoke();
         }
 
-        public void CloseWindowImmediately()
+        public virtual void ShowImmediately()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public virtual void HideImmediately()
         {
             gameObject.SetActive(false);
         }
