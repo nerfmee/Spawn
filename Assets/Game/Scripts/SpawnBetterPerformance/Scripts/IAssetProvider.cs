@@ -6,7 +6,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts
 {
     public interface IAssetProvider : IService
     {
-        DefaultEntity LoadEntityPrefab(string path);
+        T LoadEntityPrefab<T>(string path) where T : MonoBehaviour, IEntity;
         GameObject Instantiate(string path);
         GameObject Instantiate(string path, Vector3 at);
     }

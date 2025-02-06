@@ -5,12 +5,11 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts
 {
     public class AssetProvider: IAssetProvider
     {
-        public DefaultEntity LoadEntityPrefab(string path)
+        public T LoadEntityPrefab<T>(string path) where T : MonoBehaviour, IEntity
         {
-            DefaultEntity prefab = Resources.Load<DefaultEntity>(path);
-            return prefab;
+            return Resources.Load<T>(path);
         }
-
+        
         public GameObject Instantiate(string path)
         {
             var prefab = Resources.Load<GameObject>(path);

@@ -1,4 +1,5 @@
 using Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Entities;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Mechanics;
 using UnityEngine;
 
 namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory
@@ -6,11 +7,14 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory
     public class EntitySpawnFactory : IEntitySpawnFactory
     {
         private readonly CustomPool<DefaultEntity> _defaultEntityPool;
+        private readonly CustomPool<Player> _playerPool;
+
         private Vector2 _spawnPosition;
 
-        public EntitySpawnFactory(CustomPool<DefaultEntity> defaultEntityPool)
+        public EntitySpawnFactory(CustomPool<DefaultEntity> defaultEntityPool, CustomPool<Player> playerPool)
         {
             _defaultEntityPool = defaultEntityPool;
+            _playerPool = playerPool;
         }
 
         public DefaultEntity SpawnDefaultEntity()
@@ -37,7 +41,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory
             }
         }
 
-        private void SpawnLikeStair(DefaultEntity defaultEntity)
+        private void SpawnLikeStair(IEntity defaultEntity)
         {
             _spawnPosition += defaultEntity.GetEntitySize();
         }
@@ -47,6 +51,19 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory
             for (int i = 0; i < entitiesCount; i++)
             {
                 SpawnDefaultEntity();
+            }
+        }
+
+        public void SpawnPlayer(int playersCount, IMovementService movementService, InputService inputService)
+        {
+            _spawnPosition = new Vector2(2,10);
+            
+            for (int i = 0; i < playersCount; i++)
+            {
+                Player player = _playerPool.Get();
+                player.Init(movementService, inputService);
+                SpawnLikeStair(player);
+                player.transform.position = _spawnPosition;
             }
         }
     }
