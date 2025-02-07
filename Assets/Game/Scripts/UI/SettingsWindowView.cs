@@ -17,24 +17,25 @@ namespace Game.Scripts.UI
         {
             base.Initialize(data);
             Debug.Log("Initializing settings window...");
-            settingsButton.onClick.AddListener(() =>
-            {
-                PlayCloseAnimation(CloseWindow);
-            });        
+            settingsButton.onClick.AddListener(CloseWindow);
         }
 
         public override void PlayOpenAnimation(System.Action onComplete)
         {
-            StartCoroutine(AnimateDissolve(true, onComplete));
-            base.PlayOpenAnimation(onComplete);
-            Debug.Log("Settings window opening...");
+            StartCoroutine(AnimateDissolve(true, () =>
+            {
+                base.PlayOpenAnimation(onComplete);
+                onComplete?.Invoke();
+            }));
         }
-        
+
         public override void PlayCloseAnimation(System.Action onComplete)
         {
-            StartCoroutine(AnimateDissolve(false, onComplete));
-            base.PlayCloseAnimation(onComplete);
-            Debug.Log("Settings window closing...");
+            StartCoroutine(AnimateDissolve(false, () =>
+            {
+                base.PlayCloseAnimation(onComplete);
+                onComplete?.Invoke();
+            }));
         }
 
         private void CloseWindow()
@@ -42,7 +43,7 @@ namespace Game.Scripts.UI
             _windowManager = AllServices.Container.Single<WindowManager>();
             _windowManager.CloseWindow<SettingsWindowView>();
         }
-        
+
         private IEnumerator AnimateDissolve(bool isOpening, System.Action onComplete)
         {
             float duration = windowEffect.duration;
@@ -52,10 +53,8 @@ namespace Game.Scripts.UI
             {
                 elapsed += Time.deltaTime;
                 float progress = Mathf.Clamp01(elapsed / duration);
-
                 float dissolveValue = isOpening ? progress : 1 - progress;
                 windowEffect.dissolveMaterial.SetFloat(DissolveProgress, dissolveValue);
-
                 yield return null;
             }
 
@@ -63,6 +62,5 @@ namespace Game.Scripts.UI
 
             onComplete?.Invoke();
         }
-
     }
 }
