@@ -1,10 +1,10 @@
-﻿using Game.Scripts.SpawnBetterPerformance.Scripts.Factory;
+﻿using Game.Scripts.SpawnBetterPerformance.Scripts.Camera;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Factory;
 using Game.Scripts.SpawnBetterPerformance.Scripts.Factory.Entities;
 using Game.Scripts.SpawnBetterPerformance.Scripts.Mechanics;
 using Game.Scripts.SpawnBetterPerformance.Scripts.Services;
 using Game.Scripts.SpawnBetterPerformance.Scripts.UI;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Game.Scripts.SpawnBetterPerformance.Scripts
 {
@@ -12,7 +12,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts
     {
         private const int POOL_COUNT = 1000;
         private const int SPAWN_COUNT = 500;
-        private const int PLAYER_COUNT = 1;
+        private const int PLAYER_COUNT = 5;
         [SerializeField] private WindowRegistry windowRegistry;
         [SerializeField] private UIRoot uiRoot;
         private void Start()
@@ -20,9 +20,9 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts
             var assetProvider = new AssetProvider();
             AllServices.Container.RegisterSingle<IAssetProvider>(new AssetProvider());
             
+            // Регистрируем Spawn
             var prefabEntity = assetProvider.LoadEntityPrefab<DefaultEntity>(AssetPath.ENTITY_PATH);
             var playerPrefab = assetProvider.LoadEntityPrefab<Player>(AssetPath.PLAYER_PATH);
-
             var entityPool = new CustomPool<DefaultEntity>(prefabEntity, POOL_COUNT, transform);
             var playerPool = new CustomPool<Player>(playerPrefab, PLAYER_COUNT, transform);
             var spawnFabric = new EntitySpawnFactory(entityPool, playerPool);
@@ -32,9 +32,11 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts
             // Регистрируем GamePlay механики
             var inputSystem = new InputService();
             AllServices.Container.RegisterSingle<IInputService>(inputSystem);
-            var movementService = new MovementService();
+            var movementService = new MovementService(2,200);
             AllServices.Container.RegisterSingle<IMovementService>(movementService);
-            spawnFabric.SpawnPlayer(PLAYER_COUNT, movementService, inputSystem);
+            var player = spawnFabric.SpawnPlayer(PLAYER_COUNT, movementService, inputSystem);
+            var strategy = AllServices.Container.Single<HorizontalCameraMovementStrategy>();
+            strategy.SetFollowTarget(player.transform);
 
             // Регистрируем WindowManager (UI)
             var windowManager = new WindowManager(uiRoot);

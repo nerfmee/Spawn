@@ -54,17 +54,21 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Factory
             }
         }
 
-        public void SpawnPlayer(int playersCount, IMovementService movementService, InputService inputService)
+        public Player SpawnPlayer(int playersCount, IMovementService movementService, InputService inputService)
         {
             _spawnPosition = new Vector2(2,10);
-            
+
+            Player lastPlayer = null;
             for (int i = 0; i < playersCount; i++)
             {
                 Player player = _playerPool.Get();
                 player.Init(movementService, inputService);
                 SpawnLikeStair(player);
                 player.transform.position = _spawnPosition;
+                lastPlayer = player;
             }
+
+            return lastPlayer;
         }
     }
 }

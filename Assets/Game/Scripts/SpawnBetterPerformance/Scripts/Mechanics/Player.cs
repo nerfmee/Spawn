@@ -9,38 +9,37 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Mechanics
         private IMovementService _movementService;
         private InputService _inputService;
         private Rigidbody _rigidbody;
-        private Vector3 _moveDirection;
-        private bool _jumpPressed;
-        public float MoveSpeed = 5f;
-        public float JumpForce = 10f;
 
+        private Vector3 _moveDirection;
 
         public void Init(IMovementService movementService, InputService inputService)
         {
             _movementService = movementService;
             _inputService = inputService;
             _rigidbody = GetComponent<Rigidbody>();
-        }
-        private void Update()
-        {
-            _moveDirection = new Vector3(_inputService.MoveInput.x, 0, _inputService.MoveInput.y);
-            _jumpPressed = _inputService.JumpPressed;
+
+            _inputService.OnMove += HandleMove;
+            _inputService.OnJump += HandleJump;
         }
 
-        private void FixedUpdate()
+        private void HandleMove(Vector2 moveInput)
         {
-            Vector3 moveDirection = new Vector3(_inputService.MoveInput.x, 0, _inputService.MoveInput.y);
+            _moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
+        }
 
-            _movementService.Move(_rigidbody, moveDirection);
-            if (_jumpPressed)
-            {
-                _movementService.Jump(_rigidbody, JumpForce);
-            }
+        private void HandleJump()
+        {
+            _movementService.Jump(_rigidbody);
+        }
+
+        public void FixedUpdate()
+        {
+            _movementService.Move(_rigidbody, _moveDirection);
         }
 
         public Vector2 GetEntitySize()
         {
-            return Vector2.zero;
+            return Vector2.one;
         }
     }
 }

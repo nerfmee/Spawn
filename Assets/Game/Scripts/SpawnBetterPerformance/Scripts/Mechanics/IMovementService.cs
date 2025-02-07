@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace Game.Scripts.SpawnBetterPerformance.Scripts.Mechanics
 {
-    public interface IMovementService: IService
+    public interface IMovementService : IService
     {
         void Move(Rigidbody rb, Vector3 direction);
-        void Jump(Rigidbody rb, float jumpForce); }
+        void Jump(Rigidbody rigidbody);
+    }
 }

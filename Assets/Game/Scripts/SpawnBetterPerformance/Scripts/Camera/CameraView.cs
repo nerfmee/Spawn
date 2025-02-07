@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Services;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -31,6 +32,8 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
         private void Init()
         { 
             _movementStrategy = new HorizontalCameraMovementStrategy(_objectsData, _dragMovementData, _mapLimitsForCameraData, this);
+            AllServices.Container.RegisterSingle(_movementStrategy);
+            cameraEventsProvider.Initialize(_movementStrategy);
             cameraEventsProvider.RegisterHandler(this);
         }
 

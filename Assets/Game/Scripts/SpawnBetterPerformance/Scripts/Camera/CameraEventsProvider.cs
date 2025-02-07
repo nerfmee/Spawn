@@ -7,8 +7,13 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
     public class CameraEventsProvider : MonoBehaviour, ICameraEventsProvider, ICameraEventsHandler
     {
         private readonly List<ICameraEventsHandler> _handlers = new();
-
+        private HorizontalCameraMovementStrategy _cameraStrategy;
         public PointerEventData LastPointerEventData { get; private set; }
+
+        public void Initialize(HorizontalCameraMovementStrategy cameraStrategy)
+        {
+            _cameraStrategy = cameraStrategy;
+        }
 
         public void RegisterHandler(ICameraEventsHandler handler)
         {
@@ -24,7 +29,8 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
         public void OnBeginDrag(PointerEventData eventData)
         {
             LastPointerEventData = eventData;
-            
+            _cameraStrategy?.ProcessStartDrag(eventData.position);
+
             if (_handlers.Count > 0)
             {
                 _handlers[^1].OnBeginDrag(eventData);
@@ -34,7 +40,8 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
         public void OnDrag(PointerEventData eventData)
         {
             LastPointerEventData = eventData;
-            
+            _cameraStrategy?.ProcessDrag(eventData.position);
+
             if (_handlers.Count > 0)
             {
                 _handlers[^1].OnDrag(eventData);
@@ -44,7 +51,8 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
         public void OnEndDrag(PointerEventData eventData)
         {
             LastPointerEventData = eventData;
-            
+            _cameraStrategy?.ProcessEndDrag();
+
             if (_handlers.Count > 0)
             {
                 _handlers[^1].OnEndDrag(eventData);
@@ -54,7 +62,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
         public void OnPointerClick(PointerEventData eventData)
         {
             LastPointerEventData = eventData;
-            
+
             if (_handlers.Count > 0)
             {
                 _handlers[^1].OnPointerClick(eventData);
@@ -63,4 +71,3 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.Camera
         #endregion
     }
 }
-

@@ -8,6 +8,7 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
 {
     public class SettingsWindowView : UIElement
     {
+        private static readonly int DissolveProgress = Shader.PropertyToID("_DissolveProgress");
         [SerializeField] private Button settingsButton;
         [SerializeField] private WindowEffect windowEffect;
         private WindowManager _windowManager;
@@ -55,12 +56,12 @@ namespace Game.Scripts.SpawnBetterPerformance.Scripts.UI
                 float progress = Mathf.Clamp01(elapsed / duration);
 
                 float dissolveValue = isOpening ? progress : 1 - progress;
-                windowEffect.dissolveMaterial.SetFloat("_DissolveProgress", dissolveValue);
+                windowEffect.dissolveMaterial.SetFloat(DissolveProgress, dissolveValue);
 
                 yield return null;
             }
 
-            windowEffect.dissolveMaterial.SetFloat("_DissolveProgress", isOpening ? 1f : 0f);
+            windowEffect.dissolveMaterial.SetFloat(DissolveProgress, isOpening ? 1f : 0f);
 
             onComplete?.Invoke();
         }

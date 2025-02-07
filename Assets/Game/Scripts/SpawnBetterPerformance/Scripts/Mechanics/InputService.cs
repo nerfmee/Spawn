@@ -1,24 +1,38 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System;
+using Game.Scripts.SpawnBetterPerformance.Scripts.Mechanics;
 
-namespace Game.Scripts.SpawnBetterPerformance.Scripts.Mechanics
+public class InputService : IInputService, IDisposable
 {
-    public class InputService : IInputService, IDisposable
+    private PlayerInput _inputActions;
+    public event Action<Vector2> OnMove;
+    public event Action OnJump;
+
+    private Vector2 _moveInput;
+    private bool _isJumping;
+
+    public InputService()
     {
-        private PlayerInput _playerInput;
+        _inputActions = new PlayerInput();
+        
+        _inputActions.Gameplay.Move.started += ctx => UpdateMoveInput(ctx.ReadValue<Vector2>());
+        _inputActions.Gameplay.Move.performed += ctx => UpdateMoveInput(ctx.ReadValue<Vector2>());
+        _inputActions.Gameplay.Move.canceled += ctx => UpdateMoveInput(Vector2.zero);
 
-        public Vector2 MoveInput => _playerInput.Gameplay.Move.ReadValue<Vector2>();
-        public bool JumpPressed => _playerInput.Gameplay.Jump.WasPressedThisFrame();
+        _inputActions.Gameplay.Jump.started += ctx => OnJump?.Invoke();
+        
+        _inputActions.Enable();
+    }
 
-        public InputService()
-        {
-            _playerInput = new PlayerInput();
-            _playerInput.Enable();
-        }
+    private void UpdateMoveInput(Vector2 moveInput)
+    {
+        _moveInput = moveInput;
+        OnMove?.Invoke(_moveInput);
+    }
 
-        public void Dispose()
-        {
-            _playerInput.Disable();
-        }
+    public void Dispose()
+    {
+        _inputActions.Disable();
     }
 }
