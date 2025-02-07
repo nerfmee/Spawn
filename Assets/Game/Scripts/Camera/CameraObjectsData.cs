@@ -1,0 +1,25 @@
+using System;
+using UnityEngine;
+
+namespace Game.Scripts.Camera
+{    
+    [Serializable]
+    public struct CameraObjectsData
+    {
+        [SerializeField]
+        public Transform _plane;
+        
+        [SerializeField]
+        private UnityEngine.Camera _camera;
+
+        [SerializeField]
+        private Transform _cameraHolder;
+
+        [SerializeField]
+        private Transform _xRotator;
+        
+        public UnityEngine.Camera Camera => _camera;
+        public Transform CameraHolder => _cameraHolder;
+        public Transform XRotator => _xRotator;
+    }
+}
