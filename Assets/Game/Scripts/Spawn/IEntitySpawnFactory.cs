@@ -1,7 +1,7 @@
-using Game.Scripts.Factory.Entities;
 using Game.Scripts.Services;
+using Game.Scripts.Spawn.Entities;
 
-namespace Game.Scripts.Factory
+namespace Game.Scripts.Spawn
 {
     public interface IEntitySpawnFactory : IService
     {

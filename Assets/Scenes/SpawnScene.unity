@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c5185f4a646f14580a8c88a8fde9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unityConfigs: {fileID: 5407237497125705443, guid: bb80db94cdd66ae499cff68ea54e4ce6, type: 3}
   windowRegistry: {fileID: 11400000, guid: 080924c2728855146a84f8d529a25a42, type: 2}
   uiRoot: {fileID: 184606616}
 --- !u!1 &184606614

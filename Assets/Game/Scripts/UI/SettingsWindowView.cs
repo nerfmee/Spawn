@@ -9,9 +9,12 @@ namespace Game.Scripts.UI
     public class SettingsWindowView : UIElement
     {
         private static readonly int DissolveProgress = Shader.PropertyToID("_DissolveProgress");
+        
         [SerializeField] private Button settingsButton;
         [SerializeField] private WindowEffect windowEffect;
-        private WindowManager _windowManager;
+        [SerializeField] private AnimationCurve dissolveCurve;
+        
+        private WindowController _windowController;
 
         public override void Initialize(object data)
         {
@@ -29,19 +32,10 @@ namespace Game.Scripts.UI
             }));
         }
 
-        public override void PlayCloseAnimation(System.Action onComplete)
-        {
-            StartCoroutine(AnimateDissolve(false, () =>
-            {
-                base.PlayCloseAnimation(onComplete);
-                onComplete?.Invoke();
-            }));
-        }
-
         private void CloseWindow()
         {
-            _windowManager = AllServices.Container.Single<WindowManager>();
-            _windowManager.CloseWindow<SettingsWindowView>();
+            _windowController = AllServices.Container.Single<WindowController>();
+            _windowController.CloseWindow<SettingsWindowView>();
         }
 
         private IEnumerator AnimateDissolve(bool isOpening, System.Action onComplete)
@@ -53,13 +47,13 @@ namespace Game.Scripts.UI
             {
                 elapsed += Time.deltaTime;
                 float progress = Mathf.Clamp01(elapsed / duration);
-                float dissolveValue = isOpening ? progress : 1 - progress;
+                float curveValue = dissolveCurve.Evaluate(progress);
+                float dissolveValue = isOpening ? curveValue : 1 - curveValue;
                 windowEffect.dissolveMaterial.SetFloat(DissolveProgress, dissolveValue);
                 yield return null;
             }
 
             windowEffect.dissolveMaterial.SetFloat(DissolveProgress, isOpening ? 1f : 0f);
-
             onComplete?.Invoke();
         }
     }

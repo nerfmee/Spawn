@@ -5,25 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e68c12d-c51b-4291-9c86-30f67787e65b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/UILayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/UILayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/UIRoot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/UIRoot.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Spawn/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spawn/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Spawn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spawn/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Content/Materials/DissolveMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Content/Materials/DissolveMaterial.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Resources/Dialogs/GameSettings.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Resources/Dialogs/GameSettings.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Resources/Dialogs/GameView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Resources/Dialogs/GameView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/SpawnEntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/SpawnEntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/GameView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/SettingsWindowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/SettingsWindowView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/SettingsWindowController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/SettingsWindowView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/UIElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/UIElement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowRegistry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Resources/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Resources/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Resources/Prefabs/UnityConfigs.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Resources/Prefabs/UnityConfigs.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/GroundTrigger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/GroundTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/IUpdatable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/IUpdatable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/MovementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/MovementService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/CustomPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/CustomPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/Entities/DefaultEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/Entities/DefaultEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/Entities/IEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/Entities/IEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/EntitySpawnFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/EntitySpawnFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/IEntitySpawnFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Spawn/IEntitySpawnFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UI/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/UI/GameView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UI/SettingsWindowView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/UI/SettingsWindowView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UI/WindowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/UI/WindowController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UI/WindowManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/UI/WindowController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UI/WindowRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/UI/WindowRegistry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UnityConfigs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UnityConfigs/MovementConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/MovementConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UnityConfigs/MovementConfig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/MovementConfig.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UnityConfigs/SpawnConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/SpawnConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UnityConfigs/SpawnConfig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/SpawnConfig.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UnityConfigs/UnityConfigs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/UnityConfigs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/UnityConfigs/UnityConfigs.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/UnityConfigs.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/AssetPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/AssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/AssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/EntryPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/IAssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Utility/IAssetProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SpawnScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SpawnScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,10 +125,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="56180">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="72934">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="56180" />
+      <option name="pid" value="72934" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
         <list>
@@ -148,7 +163,7 @@
       <workItem from="1727653443876" duration="674000" />
       <workItem from="1735663186523" duration="6036000" />
       <workItem from="1735749598879" duration="13194000" />
-      <workItem from="1738702477058" duration="7842000" />
+      <workItem from="1738702477058" duration="59368000" />
     </task>
     <servers />
   </component>
@@ -181,33 +196,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs</url>
-          <line>21</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs" containingFunctionPresentation="Method 'RegisterWindow'">
-            <startOffsets>
-              <option value="709" />
-            </startOffsets>
-            <endOffsets>
-              <option value="757" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs</url>
-          <line>23</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs" containingFunctionPresentation="Method 'RegisterWindow'">
-            <startOffsets>
-              <option value="788" />
-            </startOffsets>
-            <endOffsets>
-              <option value="831" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs</url>
+          <url>file://$PROJECT_DIR$/Assets/Game/Scripts/UI/WindowController.cs</url>
           <line>43</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Game/Scripts/SpawnBetterPerformance/Scripts/UI/WindowManager.cs" containingFunctionPresentation="Method 'OpenWindow'">
             <startOffsets>

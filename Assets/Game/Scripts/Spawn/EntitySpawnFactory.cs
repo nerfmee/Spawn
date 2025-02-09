@@ -1,8 +1,8 @@
-using Game.Scripts.Factory.Entities;
 using Game.Scripts.Mechanics;
+using Game.Scripts.Spawn.Entities;
 using UnityEngine;
 
-namespace Game.Scripts.Factory
+namespace Game.Scripts.Spawn
 {
     public class EntitySpawnFactory : IEntitySpawnFactory
     {

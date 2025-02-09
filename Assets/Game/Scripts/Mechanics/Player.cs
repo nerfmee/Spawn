@@ -1,4 +1,4 @@
-using Game.Scripts.Factory.Entities;
+using Game.Scripts.Spawn.Entities;
 using UnityEngine;
 
 namespace Game.Scripts.Mechanics

@@ -6,7 +6,7 @@ namespace Game.Scripts.Mechanics
     {
         private float _moveSpeed;
         private float _jumpForce;
-
+        private int _mask = LayerMask.GetMask("Ground");
         public MovementService(float moveSpeed, float jumpForce)
         {
             _moveSpeed = moveSpeed;
@@ -15,11 +15,10 @@ namespace Game.Scripts.Mechanics
 
         public void Move(Rigidbody rigidbody, Vector3 moveDirection)
         {
-            if (moveDirection.magnitude > 0.1f)
-            {
-                Vector3 move = moveDirection * _moveSpeed * Time.fixedDeltaTime;
-                rigidbody.MovePosition(rigidbody.position + move);
-            }
+            Vector3 velocity = rigidbody.velocity;
+            velocity.x = moveDirection.x * _moveSpeed;
+            velocity.z = moveDirection.z * _moveSpeed;
+            rigidbody.velocity = velocity;
         }
 
         public void Jump(Rigidbody rigidbody)
@@ -33,7 +32,7 @@ namespace Game.Scripts.Mechanics
 
         private bool IsGrounded(Rigidbody rigidbody)
         {
-            return Physics.Raycast(rigidbody.position, Vector3.down, 0.8f, LayerMask.GetMask("Ground"));
+            return Physics.Raycast(rigidbody.position, Vector3.down, 0.8f, _mask);
         }
     }
 

@@ -6,13 +6,13 @@ using Object = UnityEngine.Object;
 
 namespace Game.Scripts.UI
 {
-    public class WindowManager : IService
+    public class WindowController : IService
     {
         private readonly Dictionary<Type, UIElement> _registeredWindows = new();
         private readonly Dictionary<Type, UIElement> _openWindows = new();
         private readonly UIRoot _uiRoot;
 
-        public WindowManager(UIRoot uiRoot)
+        public WindowController(UIRoot uiRoot)
         {
             _uiRoot = uiRoot ?? throw new ArgumentNullException(nameof(uiRoot));
         }

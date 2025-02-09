@@ -49,7 +49,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DissolveProgress: 0.9984739
+    - _DissolveProgress: 1
     - _DissolveSoftness: 25
     - _EnableExternalAlpha: 0
     - _NoiseScale: 0.92

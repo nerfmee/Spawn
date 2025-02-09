@@ -7,18 +7,18 @@ namespace Game.Scripts.UI
     public class GameView : UIElement
     {
         [SerializeField] private Button settingsButton;
-        private WindowManager _windowManager;
+        private WindowController _windowController;
         
         public override void Initialize(object data)
         {
             base.Initialize(data);
             Debug.Log("Initializing settings window...");
-            _windowManager = AllServices.Container.Single<WindowManager>();
+            _windowController = AllServices.Container.Single<WindowController>();
             settingsButton.onClick.AddListener(OpenSettingsWindow);
         }
         private void OpenSettingsWindow()
         {
-            _windowManager.OpenWindow<SettingsWindowView>();
+            _windowController.OpenWindow<SettingsWindowView>();
         }
     }
 }

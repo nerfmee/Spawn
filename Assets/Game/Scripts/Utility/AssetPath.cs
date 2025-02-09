@@ -1,4 +1,4 @@
-namespace Game.Scripts
+namespace Game.Scripts.Utility
 {
     public static class AssetPath
     {

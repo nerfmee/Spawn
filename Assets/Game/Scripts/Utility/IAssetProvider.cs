@@ -1,8 +1,8 @@
-using Game.Scripts.Factory.Entities;
 using Game.Scripts.Services;
+using Game.Scripts.Spawn.Entities;
 using UnityEngine;
 
-namespace Game.Scripts
+namespace Game.Scripts.Utility
 {
     public interface IAssetProvider : IService
     {

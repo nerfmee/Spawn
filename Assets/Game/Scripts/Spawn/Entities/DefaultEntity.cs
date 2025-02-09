@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Factory.Entities
+namespace Game.Scripts.Spawn.Entities
 {
     public class DefaultEntity : MonoBehaviour, IEntity
     {

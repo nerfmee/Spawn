@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Scripts
+namespace Game.Scripts.Spawn
 {
     public class CustomPool <T> where T: MonoBehaviour
     {

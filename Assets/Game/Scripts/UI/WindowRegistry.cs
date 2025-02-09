@@ -35,14 +35,14 @@ namespace Game.Scripts.UI
             return _registeredWindows.TryGetValue(windowType, out var prefab) ? prefab : null;
         }
 
-        public void RegisterWindowsForManager(WindowManager manager)
+        public void RegisterWindowsForManager(WindowController controller)
         {
             foreach (var prefab in windowPrefabs)
             {
                 if (prefab.TryGetComponent<UIElement>(out var uiElement))
                 {
                     var type = uiElement.GetType();
-                    manager.RegisterWindow(type, uiElement);
+                    controller.RegisterWindow(type, uiElement);
                 }
                 else
                 {
