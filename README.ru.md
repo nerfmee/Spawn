@@ -106,6 +106,7 @@ WindowController.OpenWindow<T>();
 WindowController.CloseWindow<T>();
 ```
 
+![Open/Close window](https://raw.githubusercontent.com/nerfmee/Spawn/main/Assets/ContentForReadMe/OpenWindow.gif)
 ---
 # Система Камеры
 
